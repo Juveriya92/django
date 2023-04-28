@@ -1,0 +1,47 @@
+{% extends 'app1/base2.html' %}
+{% load static %}
+
+{% block content%}
+
+
+<header>
+  
+<br/>
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+      height: 200px;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Recent Stories</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+<br/>
+<div class="container p-3 mb-2 bg-dark text-dark" >
+{% for story in object_list %}
+    <div class="card">
+      <div class="card-header">
+       <h3> {{story.author.username}}<h3><small>{{story.date_posted}}</small>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">{{story.title}}</h2>
+        <p class="card-text">{{story.summary}}</p>
+        <a href="{% url 'storydetail' story.pk %}" class="btn btn-primary">Read Story</a>
+      </div>
+    </div>
+    <br/>
+      
+{% endfor %}
+</div>
+
+{% endblock %}

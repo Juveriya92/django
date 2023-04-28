@@ -1,0 +1,42 @@
+{% extends 'app1/base2.html' %}
+
+{% block content%}
+<br/>
+
+<h1> Update Story </h1>
+<br/>
+<div class="container">
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label class="form-label" for="form3Example3"><strong>{{form.title.label}} :</strong></label>
+        <br/>
+        {{form.title}}
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="form3Example3"><strong>{{form.author.label}} :</strong></label>
+        <br/>
+        {{form.author}}
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="form3Example4"><strong>{{form.summary.label}} :</strong></label>
+        <br/>
+        {{form.summary}}
+      </div>
+
+      <div class="form-group">
+        <label for="story" class="form-label"><strong>Share Your Experience :</strong></label>  
+        <br/>  
+       {{form.story}}
+      </div>
+    
+      <div class="text-center text-lg-start mt-4 pt-2">
+        <button type="submit" class="btn btn-primary btn-lg"
+          style="padding-left: 2.5rem; padding-right: 2.5rem;">Update</button>
+      </div>
+</form>
+</div>
+
+{% endblock %}

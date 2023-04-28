@@ -1,0 +1,26 @@
+{% extends 'app1/base2.html' %}
+
+{% block content%}
+<br/>
+<h1> {{user}} Stories </h1>
+<br/>
+
+<div class="container">
+    <table class="table table-sm">
+    <tr>
+      <th>Title</th>
+      <th>Date Posted</th>
+      <th>Update</th>
+      <th>Delete</th>
+    <tr>
+    {% for post in user_posts %}
+        <tr>
+            <td>{{post.title}}</td>
+            <td>{{post.date_posted}}</td>
+            <td><a class="btn btn-sm btn-info" href="{% url 'update' post.pk %}">Update</a></td>
+            <td><a class="btn btn-sm btn-info" href="{% url 'delete' post.pk %}">Delete</a></td>
+    {%endfor%}
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'app1/base.html' %}
+
+{% block content%}
+
+</br>
+
+    <div class="container">
+        <div class="row justify-content-center">
+        <div class="col-md-5">
+         <div class="card">
+         </br>
+           <h2 class="card-title text-center">Register </h2>
+            <div class="card-body py-md-4">
+            </br>
+              <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputusername" class="form-label">username</label>
+                  {{ form.username }}
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                  {{ form.email }}
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+                    {{ form.password2 }}
+                </div>
+              </br>
+                <button type="submit" class="btn btn-primary">Submit</button>               
+             </form>
+           </div>
+        </div>
+      </div>
+      </div>
+      </div>
+{% endblock %}
